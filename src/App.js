@@ -58,7 +58,7 @@ function App() {
         weight= {90}
         awesome= {true}
         terrifying= {false}
-        abilities= {"Blaze, Solar power, Tough claws, Drought"}
+        abilities={["Blaze", "Solar power", "Tough claws", "Drought"]}
         />
 
         <Pokemon
@@ -66,7 +66,7 @@ function App() {
         weight= {6.9}
         awesome= {true}
         terrifying= {false}
-        abilities= {"Overgrow, Chlorophyll"}
+        abilities= {["Overgrow", "Chlorophyll"]}
         />
 
         <Pokemon
@@ -74,7 +74,7 @@ function App() {
         weight= {122}
         awesome= {true}
         terrifying= {true}
-        abilities= {"Pressure, Unnerve, Steadfast, Insomnia"}
+        abilities= {["Pressure", "Unnerve", "Steadfast", "Insomnia"]}
         />
 
         <Pokemon
@@ -82,7 +82,7 @@ function App() {
         weight= {65}
         awesome= {false}
         terrifying= {true}
-        abilities= {"Intimidate, Unnerve"}
+        abilities= {["Intimidate", "Unnerve"]}
         />
     </main>
 </div>
