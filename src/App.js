@@ -1,92 +1,60 @@
 // // src/App.js
 
-// // import Title from "./components/Title";
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//         <main>
-//           <Title />
-//         </main>
-
-//       <header className="App-header">
-//         <p>I hate coding</p>
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import './App.css';
+import "./App.css";
 import Title from "./components/Title";
-import Pokemon from "./components/Pokemon"
+import Pokemon from "./components/Pokemon";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <main>
-//         <Title content="Pokemons are shit"/>
-//         <Pokemon />
-//       </main> 
-//     </div>
-//   );
-// }
-
-// export default App;
+const all_pokemon = [
+  {
+    name: "Charizard",
+    weight: 90,
+    awesome: true,
+    terrifying: false,
+    abilities: ["Blaze", "Solar power", "Tough claws", "Drought"],
+  },
+  {
+    name: "Bulbasaur",
+    weight: 6.9,
+    awesome: true,
+    terrifying: false,
+    abilities: ["Overgrow", "Chlorophyll"],
+  },
+  {
+    name: "Mewtwo",
+    weight: 122,
+    awesome: true,
+    terrifying: true,
+    abilities: ["Pressure", "Unnerve", "Steadfast", "Insomnia"],
+  },
+  {
+    name: "Mega beedrill",
+    weight: 65,
+    awesome: false,
+    terrifying: true,
+    abilities: ["Intimidate", "Unnerve"],
+  },
+];
 
 function App() {
   return (
-<div className="App">
-    <main>
-      <Title content="Pokemons are shit"/>
-      <Pokemon
-        name= "Charizard"
-        weight= {90}
-        awesome= {true}
-        terrifying= {false}
-        abilities={["Blaze", "Solar power", "Tough claws", "Drought"]}
-        />
-
-        <Pokemon
-        name= "Bulbasaur"
-        weight= {6.9}
-        awesome= {true}
-        terrifying= {false}
-        abilities= {["Overgrow", "Chlorophyll"]}
-        />
-
-        <Pokemon
-        name= "Mewtwo"
-        weight= {122}
-        awesome= {true}
-        terrifying= {true}
-        abilities= {["Pressure", "Unnerve", "Steadfast", "Insomnia"]}
-        />
-
-        <Pokemon
-        name= "Mewtwo"
-        weight= {65}
-        awesome= {false}
-        terrifying= {true}
-        abilities= {["Intimidate", "Unnerve"]}
-        />
+    <main className="container my-5">
+      <Title content="These Pokemons are childkillers" />
+      <div className="row">
+        {all_pokemon.map((pokemon, index) => (
+          <div key={index} className="col-md-6 col-lg-4">
+            <Pokemon
+              key={index}
+              name={pokemon.name}
+              weight={pokemon.weight}
+              awesome={pokemon.awesome}
+              terrifying={pokemon.terrifying}
+              abilities={pokemon.abilities}
+            />
+          </div>
+        ))}
+      </div>
     </main>
-</div>
-);
+  );
 }
 
 export default App;
